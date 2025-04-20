@@ -14,6 +14,7 @@ from .GPFeatureConstructor import GPFeatureConstructor
 from concurrent.futures import ProcessPoolExecutor
 
 def createOVADataset(x, y, y_probs, hardness_threshold, confidences):
+    hardness_threshold = 1.0 - hardness_threshold
     unique_classes = np.unique(y)
     ova_x = []
     ova_y = []
@@ -61,7 +62,7 @@ class CategoryRelatedFC():
     def copyGPFC(self, pre_layer, new_layer):
         self.gpfcs[new_layer] = copy.deepcopy(self.gpfcs[pre_layer])
     
-    def fit(self, layer, pop_num, features_num, x, y, y_probs=None, enhance_vector_len = 0, hardness_threshold = 0.95, generation = 20, cxProb = 0.5, mutProb= 0.2):
+    def fit(self, layer, pop_num, features_num, x, y, y_probs=None, enhance_vector_len = 0, hardness_threshold = 0.05, generation = 20, cxProb = 0.5, mutProb= 0.2):
         
         print("train layer " + str(layer) + " feature")
         confidences = y_probs[np.arange(x.shape[0]), y]

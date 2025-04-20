@@ -44,10 +44,12 @@ if __name__ == '__main__':
     config = get_config()
     gc = gcForest(config)
     feature_num = 10
-    hardness_threshold = 0.95
+    hardness_threshold = 0.05
     pop_num = 50 
     generation = 20
-    gc.fit(x_train, y_train, feature_num, hardness_threshold, pop_num, generation)
+    cxProb = 0.5
+    mutProb = 0.2
+    gc.fit(x_train, y_train, feature_num, hardness_threshold, pop_num, generation, cxProb, mutProb)
     
     y_pred, y_prob = gc.predict_with_proba(x_test)
     f1_ma = f1_score(y_test, y_pred, average='macro')

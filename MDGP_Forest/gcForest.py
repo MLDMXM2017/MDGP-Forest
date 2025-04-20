@@ -47,7 +47,7 @@ class gcForest(object):
         self.crfc = None
   
 
-    def fit(self, x_train, y_train, feature_num = 10, hardness_threshold = 0.95, pop_num=50, generation=20):
+    def fit(self, x_train, y_train, feature_num = 10, hardness_threshold = 0.05, pop_num=50, generation=20, cxProb=0.5, mutProb=0.2):
         '''
         Same as fit () of other classifiers, according to x_train and y_train training model.
         
@@ -87,7 +87,7 @@ class gcForest(object):
             LOGGER.info("The shape of x_train is {}".format(x_train.shape))
             
             if deepth != 0:
-                self.crfc.fit(deepth, pop_num, feature_num, x_train, y_train, y_probs, enhance_vector_len, hardness_threshold, generation)
+                self.crfc.fit(deepth, pop_num, feature_num, x_train, y_train, y_probs, enhance_vector_len, hardness_threshold, generation, cxProb, mutProb)
                 new_x = self.crfc.transform(x_train, deepth, enhance_vector_len)
             else:
                 new_x = x_train
