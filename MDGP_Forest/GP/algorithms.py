@@ -175,8 +175,6 @@ def eaSimple(x, y, enhance_vector, pest, population, toolbox, cxpb, mutpb, ngen,
         offspring = varAnd(offspring, toolbox, cxpb, mutpb)
         
         # Evaluate the individuals with an invalid fitness
-        #invalid_ind = [ind for ind in offspring if not ind.fitness.valid]
-        
         fitnesses = toolbox.evaluate(offspring, pest, x, y, enhance_vector)
         
         for ind, fit in zip(offspring, fitnesses):
