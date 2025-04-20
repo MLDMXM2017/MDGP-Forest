@@ -14,7 +14,7 @@ numpy==1.21.6
 ```
 
 # Usage
-We provide a demo for MDGP-Forest in the test.py file, using the Iris dataset loaded via sklearn.load_iris(). If you wish to use your own dataset, you need to preprocess it into the same format as the return value of load_iris().
+We provide a demo for MDGP-Forest in the test.py file, using the Iris dataset loaded via load_iris() of sklearn. If you wish to use your own dataset, you need to preprocess it into the same format as the return value of load_iris().
 ```
 python test.py
 ```
