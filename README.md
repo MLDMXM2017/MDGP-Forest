@@ -3,6 +3,10 @@ This repository contains the ​​Python implementation​​ of ​**​MDGP-F
 
 ​​"MDGP-Forest: A Novel Deep Forest for Multi-class Imbalanced Learning Based on Multi-class Disassembly and Feature Construction Enhanced by Genetic Programming"​
 
+## Abstract
+Class imbalance is a significant challenge in the field of machine learning. Due to factors such as quantity differences and feature overlap among classes, the imbalance problem for multiclass classification is more difficult than that for binary one, which leads to the existing research primarily focusing on the binary classification scenario. This study proposes a novel deep forest algorithm with the aid of Genetic Programming (GP), MDGP-Forest, for the multiclass imbalance problem. MDGP-Forest utilizes Multi-class Disassembly and undersampling based on instance hardness between layers to obtain multiple binary classification datasets, each corresponding to a GP population for feature construction. The improved fitness function of GP assesses the incremental importance of the constructed features for enhanced vectors, introducing higher-order information into subsequent layers to improve predicted performance. Each GP population generates a set of new features that improve the separability of classes, empowering MDGP-Forest with the capability to address the challenge of overlapping features among multiple classes. We thoroughly evaluate the classification performance of MDGP-Forest on 35 datasets. The experimental results demonstrate that MDGP-Forest significantly outperforms existing methods in addressing multiclass imbalance problems, exhibiting superior predictive performance.
+![MDGP-Forest framework](./images/MDGP-Forest framework.jpg)
+
 # Requirements
 The Python environment and versions of dependency packages used in this implementation are as follows:
 ```
@@ -35,7 +39,17 @@ The table below shows the ​​mapping between variables in test.py and the hyp
 If you use this code in your research, please cite both the ​​original paper​​ and this ​​code repository​​:
 Paper Citation (BibTeX):
 ```
-
+@article{LIN2026112070,
+author = {Zhikai Lin and Yong Xu and Kunhong Liu and Liyan Chen},
+    title = {MDGP-forest: A novel deep forest for multi-class imbalanced learning based on multi-class disassembly and feature construction enhanced by genetic programming},
+    journal = {Pattern Recognition},
+    volume = {170},
+    pages = {112070},
+    year = {2026},
+    issn = {0031-3203},
+    doi = {https://doi.org/10.1016/j.patcog.2025.112070},
+    url = {https://www.sciencedirect.com/science/article/pii/S0031320325007307},
+}
 ```
 Code Repository
 ```
